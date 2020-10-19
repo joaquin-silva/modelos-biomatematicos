@@ -45,12 +45,15 @@ I0 = st.sidebar.number_input('I0', min_value=0, max_value=10000000, value=20, st
 Q0 = st.sidebar.number_input('Q0', min_value=0, max_value=10000000, value=10, step=10)
 R0 = st.sidebar.number_input('R0', min_value=0, max_value=10000000, value=0, step=10)
 
+st.sidebar.header('Otras opciones')
+t_max = st.sidebar.number_input('t_max', min_value=10, max_value=1000, value=20, step=5)
+
 st.header('Solución del modelo')
 
-sol = solve_ivp(modelo_siqr, [0, 20], [S0, I0, Q0, R0], args=(a, sigma, theta, alpha, gamma), dense_output=True)
+sol = solve_ivp(modelo_siqr, [0, t_max], [S0, I0, Q0, R0], args=(a, sigma, theta, alpha, gamma), dense_output=True)
 st.write(sol.message)
 
-t = np.arange(0, 20, 0.1)
+t = np.arange(0, t_max, 0.01)
 Z = sol.sol(t)
 
 fig = go.Figure()
