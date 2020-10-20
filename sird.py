@@ -21,10 +21,10 @@ def main():
     ''')
 
     st.latex(r'''
-    \begin{align*}
+    \begin{align}
     \mathrm{S} \overset{\beta  I}{\longrightarrow}\ & \mathrm{I} \overset{\gamma}{\longrightarrow} \mathrm{R}  \\
     & \mathrm{I} \overset{\alpha}{\longrightarrow} \mathrm{D}  \\
-    \end{align*}
+    \end{align}
     ''')
 
     st.markdown('''
