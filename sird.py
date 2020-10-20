@@ -26,14 +26,14 @@ def main():
 
     st.sidebar.header('Parámetros del modelo')
     alpha = st.sidebar.number_input('alpha', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
-    beta = st.sidebar.number_input('alpha', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
+    beta = st.sidebar.number_input('beta', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
     gamma = st.sidebar.number_input('gamma', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
 
     st.sidebar.header('Condiciones iniciales')
     S0 = st.sidebar.number_input('S0', min_value=0, max_value=10000000, value=80, step=10)
-    I0 = st.sidebar.number_input('I0', min_value=0, max_value=10000000, value=10, step=10)
-    R0 = st.sidebar.number_input('Q0', min_value=0, max_value=10000000, value=10, step=10)
-    D0 = st.sidebar.number_input('R0', min_value=0, max_value=10000000, value=0, step=10)
+    I0 = st.sidebar.number_input('I0', min_value=0, max_value=10000000, value=20, step=10)
+    R0 = st.sidebar.number_input('R0', min_value=0, max_value=10000000, value=0, step=10)
+    D0 = st.sidebar.number_input('D0', min_value=0, max_value=10000000, value=0, step=10)
 
     st.sidebar.header('Otras opciones')
     t_max = st.sidebar.number_input('t_max', min_value=10, max_value=1000, value=20, step=5)
