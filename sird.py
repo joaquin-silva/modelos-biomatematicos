@@ -12,6 +12,27 @@ def modelo_sird(t, z, alpha, beta, gamma):
 def main():
     st.title('Modelo SIR-D')
 
+    st.header('Variables del modelo')
+    st.markdown('''
+    - S: Susceptible
+    - I: Infectados
+    - R: Recuperados
+    - D: Fallecidos
+    ''')
+
+    st.latex('''
+    \begin{align*}
+    \mathrm{S} \overset{\beta  I}{\longrightarrow}\ & \mathrm{I} \overset{\gamma}{\longrightarrow} \mathrm{R}  \\
+    & \mathrm{I} \overset{\alpha}{\longrightarrow} \mathrm{D}  \\
+    \end{align*}
+    ''')
+
+    st.markdown('''
+    - $\alpha$: Tasa de mortalidad [1/t]
+    - $\beta$: Tasa de contacto efectivo [1/t]
+    - $\gamma$: Tasa de recuperación [1/t] 
+    ''')
+
     st.header('Ecuaciones del modelo')
     st.latex(r'''
     \left\{
@@ -19,7 +40,7 @@ def main():
     S'= -\frac{\beta S I}{N}\\
     I'= \frac{\beta S I}{N}-(\gamma+\alpha)I\\
     R'= \gamma I\\
-    R'=\alpha I
+    D'=\alpha I
     \end{array}
     \right.
     ''')
