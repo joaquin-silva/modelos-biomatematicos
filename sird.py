@@ -20,14 +20,17 @@ def main():
     - D: Fallecidos
     ''')
 
-    st.latex(r'''
-    \begin{align}
+    st.header('Modelo')
+    st.markdown(r'''
+    $$
+    \begin{aligned}
     \mathrm{S} \overset{\beta  I}{\longrightarrow}\ & \mathrm{I} \overset{\gamma}{\longrightarrow} \mathrm{R}  \\
     & \mathrm{I} \overset{\alpha}{\longrightarrow} \mathrm{D}  \\
-    \end{align}
+    \end{aligned}
+    $$
     ''')
 
-    st.markdown('''
+    st.markdown(r'''
     - $\alpha$: Tasa de mortalidad [1/t]
     - $\beta$: Tasa de contacto efectivo [1/t]
     - $\gamma$: Tasa de recuperación [1/t] 
@@ -46,9 +49,9 @@ def main():
     ''')
 
     st.sidebar.header('Parámetros del modelo')
-    alpha = st.sidebar.number_input('alpha', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
-    beta = st.sidebar.number_input('beta', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
-    gamma = st.sidebar.number_input('gamma', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
+    alpha = st.sidebar.number_input('alpha', min_value=0.0, max_value=20.0, value=0.1, step=0.1)
+    beta = st.sidebar.number_input('beta', min_value=0.0, max_value=20.0, value=0.9, step=0.1)
+    gamma = st.sidebar.number_input('gamma', min_value=0.0, max_value=20.0, value=0.2, step=0.1)
 
     st.sidebar.header('Condiciones iniciales')
     S0 = st.sidebar.number_input('S0', min_value=0, max_value=10000000, value=80, step=10)
