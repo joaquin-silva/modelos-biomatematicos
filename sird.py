@@ -26,7 +26,7 @@ def main():
 
     st.sidebar.header('Parámetros del modelo')
     alpha = st.sidebar.number_input('alpha', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
-    alpha = st.sidebar.number_input('alpha', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
+    beta = st.sidebar.number_input('alpha', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
     gamma = st.sidebar.number_input('gamma', min_value=0.0, max_value=10.0, value=1.0, step=0.1)
 
     st.sidebar.header('Condiciones iniciales')
